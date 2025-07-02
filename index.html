@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WBJEE College Predictor</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background-color: #f4f4f9; color: #333; margin: 0; padding: 2em; }
+        .container { max-width: 600px; margin: auto; background: white; padding: 25px 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h1 { color: #0056b3; text-align: center; }
+        label { display: block; margin-top: 20px; font-weight: 600; }
+        input, select { width: 100%; padding: 10px; margin-top: 5px; border-radius: 5px; border: 1px solid #ccc; box-sizing: border-box; }
+        button { width: 100%; background-color: #007bff; color: white; padding: 12px 15px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; margin-top: 25px; font-weight: bold; transition: background-color 0.2s; }
+        button:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>WBJEE College Predictor</h1>
+        <form action="/predict" method="post">
+            <label for="rank">Enter Your WBJEE Rank:</label>
+            <input type="number" id="rank" name="user_rank" required placeholder="e.g., 5000">
+
+            <label for="quota">Select Your Quota:</label>
+            <select id="quota" name="user_quota">
+                <option value="Home State">Home State</option>
+                <option value="All India">All India</option>
+            </select>
+
+            <label for="category">Select Your Category:</label>
+            <select id="category" name="user_category">
+                <option value="OPEN">OPEN</option>
+                <option value="SC">SC</option>
+                <option value="ST">ST</option>
+                <option value="OBC-A">OBC-A</option>
+                <option value="OBC-B">OBC-B</option>
+                <option value="EWS">EWS</option>
+                <option value="PWD">PWD (Persons with Disability)</option>
+            </select>
+
+            <label for="tfw">Are you applying for TFW (Tuition Fee Waiver)?</label>
+            <select id="tfw" name="user_tfw">
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+            </select>
+
+            <button type="submit">Predict My Colleges</button>
+        </form>
+    </div>
+</body>
+</html>
